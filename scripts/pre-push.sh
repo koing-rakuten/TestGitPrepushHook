@@ -1,10 +1,5 @@
 echo "Running pre-push hook"
-xcodebuild \
-  -workspace TestGitPrepushHook.xcworkspace \
-  -scheme TestGitPrepushHook \
-  -sdk iphonesimulator \
-  -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' \
-  test
+fastlane ios scan_test
 
 # $? stores exit value of the last command
 if [ $? -ne 0 ]; then

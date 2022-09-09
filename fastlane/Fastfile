@@ -1,0 +1,41 @@
+SIMULATOR_NAME="iPhone 13 Pro Max"
+
+platform :ios do
+    desc "Validate test before pushing the commit"
+    lane :scan_test do |options|
+        # clear_derived_data(derived_data_path: "build/fastlane/derived_data")
+        build_for_test()
+        test_without_build()
+    end
+
+    desc "build for test"
+    lane :build_for_test do |options|
+        scan(
+        # clean: true,
+        build_for_testing: true,
+        code_coverage: true,
+        workspace: "./TestGitPrepushHook.xcworkspace",
+        scheme: 'TestGitPrepushHook',
+        device: SIMULATOR_NAME,
+        # derived_data_path: "build/fastlane/derived_data",
+        cloned_source_packages_path: "SourcePackages"
+        )
+    end
+
+    desc "test without building"
+    lane :test_without_build do |options|
+        scan(
+        test_without_building: true,
+        skip_build: true,
+        code_coverage: true,
+        prelaunch_simulator: true,
+        workspace: "./TestGitPrepushHook.xcworkspace",
+        scheme: 'TestGitPrepushHook',
+        device: SIMULATOR_NAME,
+        cloned_source_packages_path: "SourcePackages",
+        # derived_data_path: "build/fastlane/derived_data",
+        buildlog_path: "build/fastlane/scan_build_log",
+        output_directory: "build/fastlane/scan_output"
+        )
+    end
+end
