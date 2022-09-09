@@ -1,0 +1,6 @@
+framework module Pods_TestGitPrepushHook_TestGitPrepushHookUITests {
+  umbrella header "Pods-TestGitPrepushHook-TestGitPrepushHookUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
