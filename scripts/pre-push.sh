@@ -1,5 +1,6 @@
 echo "Running pre-push hook"
 cd ../../
+pwd
 fastlane ios scan_test
 
 # $? stores exit value of the last command
