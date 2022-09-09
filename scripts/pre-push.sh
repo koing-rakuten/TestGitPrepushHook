@@ -1,7 +1,5 @@
 echo "Running pre-push hook"
-
-pwd
-fastlane ios scan_test
+../fastlane ios scan_test
 
 # $? stores exit value of the last command
 if [ $? -ne 0 ]; then
