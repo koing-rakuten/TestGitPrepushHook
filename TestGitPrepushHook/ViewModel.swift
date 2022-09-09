@@ -7,4 +7,4 @@
 
 import Foundation
 
-func sum(a: Int, b: Int) -> Int { a - b }
+func sum(a: Int, b: Int) -> Int { a + b }
