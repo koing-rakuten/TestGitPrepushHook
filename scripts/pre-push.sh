@@ -4,7 +4,7 @@ xcodebuild \
   -scheme TestGitPrepushHook \
   -sdk iphonesimulator \
   -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' \
-  test | xcpretty --test --color
+  test
 
 # $? stores exit value of the last command
 if [ $? -ne 0 ]; then
