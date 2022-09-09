@@ -1,5 +1,5 @@
 echo "Running pre-push hook"
-cd ../../
+
 pwd
 fastlane ios scan_test
 
